@@ -1,41 +1,49 @@
-/* 전체 선택자 */
-* {
-    color: gray;
-}
-
-/* 태그 선택자 */
-div {
-    background-color: aqua;
-}
-
-/* 클래스 선택자 */
-.orange {
-    color: orange;
-}
-
-.bg-red {
-    background-color: red;
-}
-
-/* 아이디 선택자 */
-#red {
+/* 하위 선택자 */
+div .apple {
     color: red;
 }
 
-
-* {
-    color: white;
-    background-color: gray;
+/* 자식 선택자 */
+div > .apple {
+    color: rgb(160, 1, 1);
 }
 
-span {
+/* 인접 형제 선택자 */
+h1 + ul {
+    font-size: 20px;
+}
+
+/* 일반 형제 선택자 */
+h1 ~ ul {
+    color: blue;
+}
+
+
+.lion {
+    color: sienna;
+}
+
+ul > .lion {
+    background-color: greenyellow;
+    font-weight: bold;
+}
+
+hr + .lion {
     background-color: red;
 }
 
-#first {
-    background-color: blue;
+#tiger {
+    background-color: yellow;
 }
 
-.second {
-    background-color: green;
+#tiger + li {
+    background-color: skyblue;
 }
+ul > .lion + .lion ~ li {
+    background-color: orange;
+}
+
+/* 
+    li.apple 처럼 붙여서 사용하면 
+    li이면서 class가 apple인 태그가 선택된다
+*/
