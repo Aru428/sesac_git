@@ -1,0 +1,47 @@
+h1 {
+    color: blue;
+}
+
+div {
+    background-color: green;
+}
+
+span {
+    color: white;
+    background-color: black;
+}
+.red {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+.orange {
+    background-color: orange;
+    width: 200px;
+    height: 100px;
+}
+.yellow {
+    background-color: yellow;
+    width: 300px;
+    height: 100px;
+}
+.green {
+    background-color: green;
+    width: 400px;
+    height: 100px;
+}
+.blue {
+    background-color: blue;
+    width: 500px;
+    height: 100px;
+}
+.darkblue {
+    background-color: darkblue;
+    width: 600px;
+    height: 100px;
+}
+.purple {
+    background-color: purple;
+    width: 700px;
+    height: 100px;
+}
