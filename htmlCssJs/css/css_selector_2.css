@@ -67,3 +67,47 @@ a:visited {
 .stripes div:nth-child(2n) {
     background-color: yellow;
 }
+
+
+/* ::before */
+div.before-el::before {
+    content: "[HOT]!";
+    color: white;
+    background-color: red;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+/* ::after */
+div.after-el::after {
+    content: "뒤!";
+}
+
+.box::before {
+    content: "택시";
+}
+
+.box::after {
+    content: "빨리";
+}
+
+/* input태그 이면서 type이 text인 태그를 선택하겠다 */
+/* input[type=password] {
+    background-color: orange;
+}
+
+input[name=name] {
+    background-color: aquamarine;
+} */
+
+input[disabled] {
+    background-color: red;
+}
+
+input[placeholder="이름"] {
+    background-color: orange;
+}
+
+input[value]{
+    background-color: blue;
+}
