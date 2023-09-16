@@ -1,47 +1,41 @@
-h1 {
-    color: blue;
+/* 전체 선택자 */
+* {
+    color: gray;
 }
 
+/* 태그 선택자 */
 div {
-    background-color: green;
+    background-color: aqua;
+}
+
+/* 클래스 선택자 */
+.orange {
+    color: orange;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+/* 아이디 선택자 */
+#red {
+    color: red;
+}
+
+
+* {
+    color: white;
+    background-color: gray;
 }
 
 span {
-    color: white;
-    background-color: black;
-}
-.red {
     background-color: red;
-    width: 100px;
-    height: 100px;
 }
-.orange {
-    background-color: orange;
-    width: 200px;
-    height: 100px;
-}
-.yellow {
-    background-color: yellow;
-    width: 300px;
-    height: 100px;
-}
-.green {
-    background-color: green;
-    width: 400px;
-    height: 100px;
-}
-.blue {
+
+#first {
     background-color: blue;
-    width: 500px;
-    height: 100px;
 }
-.darkblue {
-    background-color: darkblue;
-    width: 600px;
-    height: 100px;
-}
-.purple {
-    background-color: purple;
-    width: 700px;
-    height: 100px;
+
+.second {
+    background-color: green;
 }
