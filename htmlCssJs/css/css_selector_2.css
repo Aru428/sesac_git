@@ -1,0 +1,69 @@
+.div-hover:hover {
+    background-color: red;
+}
+
+.div-active:active {
+    background-color: blue;
+    color: white;
+}
+
+.input-focus:focus {
+    background-color: orange;
+}
+
+a:visited {
+    color: cadetblue;
+}
+
+/* fruits 하위 요소 중에 첫번째 자식의 span이라면 color를 red로
+    이라는 의미를 가짐
+ */
+.fruits span:first-child {
+    color: red;
+}
+
+.fruits h3:last-child{
+    color: red;
+}
+
+.fruits span:nth-child(2) {
+    color: green;
+}
+
+.fruits-2 span:nth-child(2n) {
+    color: blue;
+}
+
+.fruits-2 span:not(.wm) {
+    background-color: aqua;
+}
+
+.fruits *:not(span) {
+    background-color: lawngreen;
+}
+
+
+
+.h1-hover:hover {
+    color: red;
+}
+
+.a-active:active {
+    background-color: blue;
+}
+
+.input-focus:focus {
+    background-color: orange;
+}
+
+
+
+
+.stripes div:nth-child(2n+1) {
+    background-color: navy;
+    color: white;
+}
+
+.stripes div:nth-child(2n) {
+    background-color: yellow;
+}
