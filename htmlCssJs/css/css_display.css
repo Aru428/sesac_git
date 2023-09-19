@@ -1,0 +1,117 @@
+/* inline : width, height, margin(top, bottom) 무용지물 */
+/* inline-block : inline을 block처럼 사용가능하게 함그래서 가로정렬 가능 */
+
+.box {
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    color: white;
+    margin: 5px;
+}
+
+.d-inline-block {
+    display: inline-block;
+    color: white;
+    padding: 20px; 
+}
+
+/* flex : 자식 요소(하위 요소 아님)를 inline-block으로 만든다 */
+
+/* .container {
+    display: flex;
+    height: 500px;
+    flex-direction: column-reverse;
+} */
+
+.container-pra {
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+    display: flex;
+    margin: 10px;
+}
+
+.container-pra1 {
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
+}
+
+.container-pra2 {
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    
+}
+
+/* .item {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+} */
+
+.container-2 {
+    /* flex-wrap, justify-content */
+    display: flex;
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-3 {
+    /* flex-wrap, justify-content */
+    display: flex;
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: blanchedalmond;
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    margin: 5px;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.display {
+    justify-content: center;
+    align-content: center
+}
+
+.display1 {
+    justify-content: center;
+    
+}
+
+.column {
+    flex-direction: column;
+}
