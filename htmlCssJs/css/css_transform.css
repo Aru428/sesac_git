@@ -1,0 +1,38 @@
+img {
+    width: 200px;
+}
+
+.img-skew:active {
+    transform: skew(50deg, 50deg);
+}
+
+.img-rotate:active {
+    transform: rotateY(30deg);
+}
+
+.img-scale:active {
+    transform: scale(2);
+}
+
+.img-translate:active {
+    transform: translate(10px, 10px);
+}
+
+.img-transform:hover {
+    width: 500px;
+    transform: perspective(150px) rotateY(30deg);
+    transition: all 2s linear 2s;
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    color: white;
+}
+
+.block:hover {
+    width: 300px;
+    height: 300px;
+    transition: all 1s linear 0.5s;
+}
