@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+}
+
+.box {
+    /* static : 기본값 */
+    /* position: static; */
+    width: 100px;
+    height: 100px;
+}
+
+.sm-box {
+    width: 50px;
+    height: 50px;
+}
+
+.box-red {
+    position: absolute;
+    background-color: red;
+    top: 20px;
+    left: 20px;
+}
+
+/* relative : 원래 위치를 기준으로 */
+.box-orange {
+    background-color: orange;
+    position: relative;
+    /* bottom : 20px; (음수값도 사용한다)*/
+    /* left: 20px; */
+    top: 20px;
+    right: 20px;
+}
+
+.box-yellow {
+    position: absolute;
+    background-color: yellow;
+}
+
+/* absolute : position이 있는 상위 요소 기준으로 배치 */
+.box-green {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: green;
+}
+
+/* 
+    position만 쓰면 위치가 이동하지 않는다.
+    top, left, right, bottom을 줘야 이동한다.
+*/
+
+/* fixed : 뷰포트(브라우저)를 기준으로 배치 주로 내부바에 많이 사용된다 */
+.fixed {
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-color: lemonchiffon;
+}
+
+.item-1 {
+    background-color: red;
+    position: relative;
+    left: 50px;
+    top: 30px;
+}
+
+.item-2 {
+    background-color: orange;
+    position: absolute;
+    right: 30px;
+    bottom: 100px;
+}
+
+.item-3 {
+    background-color: green;
+    position: fixed;
+    top: 100px;
+    right: 100px;
+}
