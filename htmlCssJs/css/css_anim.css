@@ -1,0 +1,70 @@
+.box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    /* animation : animation이름, 지속시간, 반복 형태, delay시간, 반복 횟수 */
+    animation: movetoright 2s linear 1s infinite alternate;
+    /* animation-direction: alternate; */
+}
+
+@keyframes movetoright {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 100px;
+    }
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border-radius: 50%;
+    position: relative;
+    animation: move 3s linear 1s 6;
+}
+
+@keyframes move {
+    0% {
+        left: 0px;
+    }
+
+    25% {
+        left: 100px;
+        top: 0px;
+    }
+
+    50% {
+        left: 100px;
+        top: 100px;
+    }
+
+    75% {
+        top: 100px;
+        left : 0px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+P {
+    position: relative;
+    animation: movetoleft 3s;
+}
+
+@keyframes movetoleft {
+    from {
+        width: 300%;
+        left: 300%;
+    }
+
+    to {
+        width: 100%;
+        left : 0%;
+    }
+}
