@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문</title>
+</head>
+<body>
+    <script>
+        // if, else if, else
+        let name = "linda"
+        if(name === "lily") {
+            console.log("lily 리더님 안녕하세요")
+        }
+        else if(name === "linda") {
+            console.log("linda 리더님 안녕하세요")
+        }
+        else {
+            console.log("누구세요?")
+        }
+
+
+        if(name === "lily") {
+            console.log("lily 리더님 안녕하세요")
+        }
+        else {
+            console.log("누구세요?😆")
+        }
+
+
+        let number = 5;
+        if(number > 4) {
+            console.log("d")
+            if(number > 7) {
+                console.log("a")
+            }
+            else {
+                console.log("b")
+            }
+        }
+        else {
+            console.log("c")
+        }
+
+        // if문 실습
+        let age = 16;
+        if(age >= 20) {
+            console.log("성인")
+        }
+        else if (age >= 17) {
+            console.log("고등학생")
+        }
+        else if (age >= 14) {
+            console.log("중학생")
+        }
+        else if (age >= 8) {
+            console.log("초등학생")
+        }
+        else {
+            console.log("유아")
+        }
+
+        // switch문
+        number = "b";
+        switch (number) {
+            case "a":
+                console.log("1");
+                break;
+            case "b":
+                console.log("2");
+                break;
+            case "c":
+                console.log("3");
+                break;
+            default:
+                console.log("모르겠어요");
+                break;
+        }
+
+        name = "lily";
+        // 3항 연산자 | (조건) ? (참일 때 실행할 코드) : (거짓일 때 실행할 코드)
+        name == "lily" ? console.log("안녕하세요") : console.log("누구세요?")
+
+        let message = name == "lily" ? "안녕하세요" : "누구세요?"
+        console.log(message)
+
+        let now = new Date().getHours();
+        now >= 0 && now < 12 ? console.log("오전입니다") : console.log("오후입니다")
+
+    </script>
+</body>
+</html>
