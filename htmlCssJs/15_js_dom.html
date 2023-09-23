@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <div id="box" class="box"> hello </div>
+    <div id="container" class="box item"> hello </div>
+    <span>hello span</span>
+    <input type="text" name="email" />
+
+
+    <div id="box2">
+        <b>hello</b> box2
+    </div>
+
+
+    <script>
+        // document 속성
+        console.log(document.documentElement);
+        console.log(document.head);
+        console.log(document.title);
+        console.log(document.body);
+        console.log(document.URL);
+        console.log(document.domain);
+
+        // document 요소 선택
+        let elById = document.getElementById("box");
+        console.log(elById);
+
+        let elByClass = document.getElementsByClassName("box");
+        console.log(elByClass);
+        console.log(elByClass[0]);
+        console.log(elByClass[1]);
+
+        let elByTag = document.getElementsByTagName("span"); // 1개이더라도 배열에 담겨서 나타난다
+        console.log(elByTag);
+
+        let elByName = document.getElementsByName("email");
+        console.log(elByName);
+
+        // 선택자를 이용하여 요소를 선택
+        let elBySelector = document.querySelector(".box")
+        let elBySelectorAll = document.querySelectorAll(".box")
+        console.log(elBySelector)
+        console.log(elBySelectorAll)
+
+        let elBox2 = document.getElementById("box2")
+        // let elBox2 = document.querySelector(".box2")
+
+        console.log(elBox2)
+        console.log(elBox2.innerText) // text만 가져옴
+        console.log(elBox2.innerHTML) // text랑 tag도 가져옴
+
+        elBox2.innerText = "hello <b>lily</b>"
+        elBox2.innerHTML = "hello <b>lily</b>"
+    </script>
+</body>
+</html>
