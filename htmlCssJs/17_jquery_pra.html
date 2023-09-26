@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 바꾸기</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .container {
+            width: 600px;
+            height: 600px;
+            border: solid 10px orange;
+            border-radius: 10%;
+        }
+
+        .content {
+            text-align: center;
+            font-size: 100px;
+        }
+
+        span {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <p><span>과일</span>을</p>
+            <p>골라볼게요</p>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button type="button" ondblclick="" >사과</button>
+        <button type="button" ondblclick="" >바나나</button>
+        <button type="button" ondblclick="" >포도</button>
+        <button type="button" ondblclick="" >복숭아</button>
+    </div>
+
+
+    <script>
+        function apple(){
+            $(".content").remove();
+            $(".container").append(`<img src="./images/apple.jpg" />`);
+        }
+    </script>
+</body>
+</html>
