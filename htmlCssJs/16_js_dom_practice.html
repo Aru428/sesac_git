@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+</head>
+<body>
+    <!-- 실습 - 계산기 -->
+    값1: <input type="text" id="num1" /> <br />
+    값2: <input type="text" id="num2" /> <br />
+    연산자: <input type="text" id="oper" /> <br />
+    결과: <input type="text" id="result" /> <br /><br />
+    
+    <button type="button" onclick="cal()">계산하기</button>
+    <button type="button" onclick="reset()">초기화</button>
+
+
+    <script>
+        function cal(){
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+            let operator = document.getElementById("oper").value;
+            let result = 0;
+
+            if (operator == '+') { result = num1 + num2; }
+            else if (operator == '-') { result = num1 - num2; }
+            else if (operator == '*') { result = num1 * num2; }
+            else { result = num1 / num2; }
+            document.getElementById("result").value = result;
+        }
+
+        function reset(){
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("oper").value = "";
+            document.getElementById("result").value = "";
+        }
+    </script>
+
+    
+
+</body>
+</html>
