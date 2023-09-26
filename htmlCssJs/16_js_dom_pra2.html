@@ -1,49 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <!-- 실습 - 방명록
-    <b>작성자</b> <input type="text" id="name" /> <br />
-    <b>내용</b> <input type="text" id="content" /> <br /><br />
-
-    <button type="button" onclick="addTable()">작성</button> <br /><br />
-
-    <table border="1" style="width: 500px;">
-        <thead>
-            <th>번호</th>
-            <th>작성자</th>
-            <th>내용</th>
-            <th>작성일</th>
-        </thead>
-        <tr>
-            <td>1</td>
-            <td>김규리</td>
-            <td>여러분 반가워요</td>
-            <td>작성일</td>
-        </tr>
-    </table>
-
-    <script>
-        function addTable() {
-            let name = document.getElementById("name").value;
-            let content = document.getElementById("content").value;
-            let date = new Date();
-            createTr();
-        }
-
-        function createTr(){
-            const container = document.querySelector("table");
-            const newTr = document.createElement("tr");
-            
-
-        }
-    </script> -->
-
-    <div>방명록입니다.</div>
+    <!-- <div>방명록입니다.</div>
     <div>
         <div><b>작성자</b> <input type="text" name="name" /></div>
         <b>내용</b> <input type="text" name="content" />
@@ -94,6 +57,56 @@
 
             // tbody태그의 자식요소로 tr태그를 추가
             const tbody = document.querySelector("tbody");
+            tbody.append(tr);
+            num++;
+        }
+    </script> -->
+
+
+    <div>방명록입니다.</div> <br />
+
+    <span><b>작성자</b></span>
+    <input type="text" id="name"> <br />
+    <span><b>내용</b></span>
+    <input type="text" id="content"> <br /><br />
+
+    <button type="button" onclick="addTr()">작성</button><br /><br />
+
+    <table border="1" style="width: 500px;">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>작성자</th>
+                <th>내용</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        let num = 1;
+        function addTr(){
+            let name = document.getElementById("name").value;
+            let content = document.getElementById("content").value;
+            const date = new Date();
+            const dateString = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()} : ${date.getMinutes()}`;
+
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            td1.innerText = num;
+            let td2 = document.createElement("td");
+            td2.innerText = name;
+            let td3 = document.createElement("td");
+            td3.innerText = content;
+            let td4 = document.createElement("td");
+            td4.innerText = dateString;
+
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+            tr.append(td4);
+            let tbody = document.querySelector("tbody");
             tbody.append(tr);
             num++;
         }
