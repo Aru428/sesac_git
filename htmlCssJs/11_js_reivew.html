@@ -129,6 +129,28 @@
       } else {
         console.log("오후");
       }
+
+      // js 반복문
+      console.log("----- 반복문 -----");
+
+      for (let i = 0; i < 10; i++) {
+        console.log(`인사를 ${i + 1}번째 드립니다!`);
+      }
+
+      let index = 0;
+      while (index < 10) {
+        console.log(`인사를 ${index + 1}번째 드립니다!`);
+        index++;
+      }
+
+      let numbers = [1, 2, 3, 4, 5, 6];
+      let fruits = ["사과", "바나나", "수박", "포도", "파인애플"];
+      for (num of numbers) {
+        console.log(num);
+      }
+      for (fruit of fruits) {
+        console.log(fruit);
+      }
     </script>
   </body>
 </html>
