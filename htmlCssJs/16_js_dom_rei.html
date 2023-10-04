@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 600px;
+        height: 400px;
+        background-color: beige;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box red"></div>
+      <div class="box orange"></div>
+      <div class="box yellow"></div>
+    </div>
+
+    <input type="text" name="name" /> <br />
+
+    <button type="button" onclick="twincle()">반짝반짝</button>
+    <button type="button" onclick="addPlaceholder()">placeholder</button>
+    <button type="button" onclick="addBox()">박스 추가</button>
+    <button type="button" onclick="removeBox()">박스 삭제</button>
+
+    <script>
+      let boxes = document.querySelectorAll(".box");
+      let box1 = boxes[0];
+      box1.innerHTML = "<b>hello</b>";
+      console.log(box1.classList);
+
+      function twincle() {
+        box1.classList.toggle("red");
+      }
+
+      function addPlaceholder() {
+        let input = document.querySelector("input");
+        input.setAttribute("placeholder", "이름을 입력하세요");
+        input.setAttribute("id", "input_name");
+        console.log(input);
+      }
+
+      function addBox() {
+        const container2 = document.querySelector(".container");
+        const newBox = document.createElement("div");
+        newBox.className = "box red";
+        container2.append(newBox);
+      }
+
+      function removeBox() {
+        let orangeBox = document.querySelector(".box.orange");
+        orangeBox.remove();
+      }
+    </script>
+  </body>
+</html>
