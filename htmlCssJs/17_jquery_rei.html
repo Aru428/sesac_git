@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .container {
+        width: 600px;
+        height: 400px;
+        background-color: beige;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box red" id="red"></div>
+      <div class="box orange" id="red"></div>
+      <div class="box yellow" id="red"></div>
+    </div>
+
+    <span>추가 사용하기</span>
+    <button type="button" onclick="useAppend()">append()</button>
+    <button type="button" onclick="usePrepend()">prepend()</button>
+    <button type="button" onclick="useBefore()">before()</button>
+    <button type="button" onclick="useAfter()">after()</button>
+    <br />
+    <span>삭제 사용하기</span>
+    <button type="button" onclick="useRemove()">remove()</button>
+    <button type="button" onclick="useEmpty()">empty()</button>
+
+    <br /><br />
+
+    <input type="text" name="name" id="input" value="iliy" />
+    <button type="button" onclick="useVal()">val() 사용하기</button>
+    <button type="button" onclick="useAttr()">attr() 사용하기</button>
+
+    <br /><br />
+
+    <span id="span1">hello</span>
+    <button type="button" onclick="useCss()">css() 사용하기</button>
+    <button type="button" onclick="useText()">text() 사용하기</button>
+    <button type="button" onclick="useHtml()">html() 사용하기</button>
+
+    <br /><br />
+
+    <button type="button" onclick="useParent()">요소 탐색하기</button>
+    <button type="button" onclick="controlClass()">클래스 조작하기</button>
+
+    <script>
+      function useVal() {
+        let val = $("#input").val();
+        console.log(val);
+      }
+
+      function useAttr() {
+        $("#input").val("");
+        $("#input").attr("placeholder", "이름을 입력하세요");
+      }
+
+      function useCss() {
+        $("#span1").css("font-size", "30px");
+        $("#span1").css("color", "blue");
+      }
+
+      function useText() {
+        $("#span1").text("helloooooo");
+      }
+
+      function useHtml() {
+        $("#span1").html("hello <b>hi</b> hello");
+      }
+
+      function useAppend() {
+        $(".container").append(`<div class="box red"></div>`);
+      }
+
+      function usePrepend() {
+        $(".container").prepend(`<div class="box red"></div>`);
+      }
+      function useBefore() {
+        $(".container").before(`<div class="box red"></div>`);
+      }
+      function useAfter() {
+        $(".container").after(`<div class="box red"></div>`);
+      }
+      function useRemove() {
+        $(".box.orange").remove();
+      }
+      function useEmpty() {
+        $(".container").empty();
+      }
+
+      function useParent() {
+        console.log("parent", $(".box.red").parent());
+        console.log("parents", $(".box.red").parents());
+        console.log("next", $(".box.red").next());
+        console.log("prev", $(".box.orange").prev());
+      }
+      function controlClass() {
+        $(".red").toggle();
+      }
+    </script>
+  </body>
+</html>
