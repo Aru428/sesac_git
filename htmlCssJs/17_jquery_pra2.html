@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스 바꾸기</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+      .red {
+        background-color: red;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .green {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .violet {
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box red" onclick="changeColor()"></div>
+
+    <script>
+      function changeColor() {
+        if ($(".red").hasClass("red")) {
+          $(".red").attr("class", "box orange");
+        } else if ($(".orange").hasClass("orange")) {
+          $(".orange").attr("class", "box yellow");
+        } else if ($(".yellow").hasClass("yellow")) {
+          $(".yellow").attr("class", "box green");
+        } else if ($(".green").hasClass("green")) {
+          $(".green").attr("class", "box blue");
+        } else if ($(".blue").hasClass("blue")) {
+          $(".blue").attr("class", "box violet");
+        } else if ($(".violet").hasClass("violet")) {
+          $(".violet").attr("class", "box red");
+        }
+      }
+    </script>
+  </body>
+</html>
