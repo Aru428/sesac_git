@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>값1:</span>
+    <input type="text" id="num1" /> <br />
+    <span>값2:</span>
+    <input type="text" id="num2" /> <br />
+    <span>연산자:</span>
+    <input type="text" id="oprator" /> <br />
+    <span>결과:</span>
+    <input type="text" id="result" /> <br /><br />
+
+    <button type="button" onclick="cal()">계산하기</button>
+    <button type="button" onclick="reset()">초기화</button>
+
+    <br /><br /><br />
+    <span>작성자:</span>
+    <input type="text" id="name" /> <br />
+    <span>내용:</span>
+    <input type="text" id="content" /> <br /><br />
+
+    <button type="button" onclick="addTable()">작성</button> <br /><br />
+    <table border="1">
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>작성자</th>
+          <th>내용</th>
+          <th>작성일</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      // 방명록
+      let num = 1;
+      function addTable() {
+        let body = document.querySelector("tbody");
+        let date = new Date();
+        let datelog = `${date.getFullYear()}-${
+          date.getMonth() + 1
+        }-${date.getDay()}`;
+        let name = document.getElementById("name").value;
+        let content = document.getElementById("content").value;
+
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        td1.innerText = num;
+        let td2 = document.createElement("td");
+        td2.innerText = name;
+        let td3 = document.createElement("td");
+        td3.innerText = content;
+        let td4 = document.createElement("td");
+        td4.innerText = datelog;
+
+        tr.append(td1);
+        tr.append(td2);
+        tr.append(td3);
+        tr.append(td4);
+        body.append(tr);
+        num++;
+      }
+
+      // 계산기
+      function cal() {
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        let oprator = document.getElementById("oprator").value;
+
+        if (oprator == "+") {
+          document.getElementById("result").value = num1 + num2;
+        } else if (oprator == "-") {
+          document.getElementById("result").value = num1 - num2;
+        } else if (oprator == "*") {
+          document.getElementById("result").value = num1 * num2;
+        } else if (oprator == "/") {
+          document.getElementById("result").value = num1 / num2;
+        } else {
+          document.getElementById("result").value =
+            "연산자를 다시 입력해주세요";
+        }
+      }
+
+      function reset() {
+        document.querySelector("#num1").value = "";
+        document.querySelector("#num2").value = "";
+        document.querySelector("#oprator").value = "";
+        document.querySelector("#result").value = "";
+      }
+    </script>
+  </body>
+</html>
