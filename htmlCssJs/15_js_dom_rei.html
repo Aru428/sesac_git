@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box" class="box">hello</div>
+    <div id="container" class="box item">hello</div>
+    <span>hello</span>
+    <input type="text" name="email" />
+    <div id="box2">
+      <b>hello</b>
+    </div>
+
+    <script>
+      let elById = document.getElementById("box");
+      console.log(elById);
+
+      let elByClass = document.getElementsByClassName("box");
+      console.log(elByClass);
+      console.log(elByClass[0]);
+      console.log(elByClass[1]);
+
+      let elByTag = document.getElementsByTagName("span");
+      console.log(elByTag);
+      console.log(elByTag[0]);
+
+      let elByName = document.getElementsByName("email");
+      console.log(elByName);
+      console.log(elByName[0]);
+
+      let elBySelector = document.querySelector(".box.item");
+      let elBySelectorAll = document.querySelectorAll(".box");
+      console.log(elBySelector);
+      console.log(elBySelectorAll);
+
+      let elBox2 = document.querySelector("#box2");
+      console.log(elBox2);
+      console.log(elBox2.innerText);
+      console.log(elBox2.innerHTML);
+
+      elBox2.innerText = "hello lily";
+      elBox2.innerHTML = "hello <b>lily</b>";
+      console.log(elBox2);
+    </script>
+  </body>
+</html>
