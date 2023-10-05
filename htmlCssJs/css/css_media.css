@@ -1,0 +1,73 @@
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: blanchedalmond;
+    display: flex;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+/* 미디어 */
+/* @media print {
+    .container {
+        background-color: blue;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        background-color: blue;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .yellow {
+        background-color: darkgoldenrod;
+    }
+} */
+
+@media screen and (max-width: 500px) {
+    .container {
+        /* flex-direction: column; */
+        display: block;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        background-color: skyblue;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    body {
+        background-color: orange;
+    }
+}
+
+@media screen and (max-height: 300px) {
+    p {
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+@media screen and (min-height: 500px) {
+    p {
+        background-color: green;
+    }
+}
