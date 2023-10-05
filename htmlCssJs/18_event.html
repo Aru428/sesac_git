@@ -42,20 +42,20 @@
 
 
         // 마우스 이벤트
-        $(".container").click(function() {
-            // event가 걸린 요소를 this에 담음
-            console.log(this);
-            $(this).css("background-color", "orange");
-            // 아래 코드는 클래스가 container인 모든 요소의 색깔이 변함
-            // $(".container").css("background-color", "orange");
-        })
-        // background-color 변경 if문 활용
-        $(".container").click(function() {
-            // console.log($(this).css("background-color"))
-            if($(this).css("background-color") == "rgb(255, 0, 0)"){
-                $(this).css("background-color", "orange");
-            }
-        })
+        // $(".container").click(function() {
+        //     // event가 걸린 요소를 this에 담음
+        //     console.log(this);
+        //     $(this).css("background-color", "orange");
+        //     // 아래 코드는 클래스가 container인 모든 요소의 색깔이 변함
+        //     // $(".container").css("background-color", "orange");
+        // })
+        // // background-color 변경 if문 활용
+        // $(".container").click(function() {
+        //     // console.log($(this).css("background-color"))
+        //     if($(this).css("background-color") == "rgb(255, 0, 0)"){
+        //         $(this).css("background-color", "orange");
+        //     }
+        // })
 
         // .container 요소에 마우스가 올라갔을 때, 실행시키고 싶은 코드
         $(".container").mouseover(function() {})
@@ -94,6 +94,17 @@
             if (event.key == "Enter") console.log("value: ",this.value);
             // if (event.keyCode == 13) console.log("value: ",this.value);
         });
+
+        // js
+        const container = document.getElementsByClassName("container")
+        // jQuery의 on 메서드와 비슷
+        // on은 여러가지 요소에 대해 이벤트 처리
+        // addEventListner는 하나의 요소에만 이벤트를 걸 수 있다
+        for(let i=0; i<container.length; i++){
+            container[i].addEventListener("click", function() {
+                this.style.backgroundColor = "red";
+            })
+        }
     </script>
 </body>
 </html>
