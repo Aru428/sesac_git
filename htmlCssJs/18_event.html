@@ -49,6 +49,13 @@
             // 아래 코드는 클래스가 container인 모든 요소의 색깔이 변함
             // $(".container").css("background-color", "orange");
         })
+        // background-color 변경 if문 활용
+        $(".container").click(function() {
+            // console.log($(this).css("background-color"))
+            if($(this).css("background-color") == "rgb(255, 0, 0)"){
+                $(this).css("background-color", "orange");
+            }
+        })
 
         // .container 요소에 마우스가 올라갔을 때, 실행시키고 싶은 코드
         $(".container").mouseover(function() {})
