@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        table {
+            width: 700px;
+            height: 700px;
+        }
+        td {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            vertical-align: top;
+        }
+        h2 {
+            color: green;
+            position: relative;
+            left: 300px;
+        }
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <span>날짜: </span>
+    <input type="text" class="date" /> <br />
+    <span>내용: </span>
+    <input type="text" class="content" /> <br />
+    <button type="button" onclick="addText()">작성</button> <br /><br />
+
+
+    <h2>2023년 10월</h2>
+    <table>
+        <thead>
+            <tr>
+                <td class="red">日</td>
+                <td>月</td>
+                <td>火</td>
+                <td>水</td>
+                <td>木</td>
+                <td>金</td>
+                <td class="blue">土</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="red">1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td class="blue">7</td>
+            </tr>
+            <tr>
+                <td class="red">8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td class="blue">14</td>
+            </tr>
+            <tr>
+                <td class="red">15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td class="blue">21</td>
+            </tr>
+            <tr>
+                <td class="red">22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td class="blue">28</td>
+            </tr>
+            <tr>
+                <td class="red">29</td>
+                <td>30</td>
+                <td>31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="blue"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        let now
+        // 날짜 클릭
+        $("td").on("click", function() {
+            $(".date").val($(this).text())
+            now = this
+        })
+
+        // 내용 넣기
+        function addText() {
+            let content = $(".content").val()
+            let day = $(".date").val()
+            //$(now).html(`${day}<br />${content}`)
+            $(now).append(`<br />${content}`)
+        }
+    </script>
+</body>
+</html>
