@@ -8,6 +8,7 @@
       src="https://kit.fontawesome.com/837ff3adc1.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
       :root {
         /* 변수 : css에서는 주로 자주 사용하는 속성을 변수 선언한다 */
@@ -103,5 +104,11 @@
         </ul>
       </div>
     </header>
+
+    <script>
+      $(".logo").on("click", function() {
+        $(".menu").toggle("slow");
+      })
+    </script>
   </body>
 </html>
