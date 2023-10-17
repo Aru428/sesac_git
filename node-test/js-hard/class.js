@@ -82,3 +82,27 @@ class Shape {
 
 let rec1 = new Shape(3, 4);
 console.log(rec1.getArea());
+
+// 실습. 클래스 상속
+class Rectangle extends Shape {
+  getDiagonal() {
+    return Math.sqrt(this.width ** 2 + this.height ** 2);
+  }
+}
+
+class Triangle extends Shape {
+  getArea() {
+    return (this.width * this.height) / 2;
+  }
+}
+
+class Circle extends Shape {
+  constructor(width, height, radius) {
+    super(width, height);
+    this.radius = radius;
+  }
+
+  getArea() {
+    return this.radius ** 2 * 3.14;
+  }
+}
