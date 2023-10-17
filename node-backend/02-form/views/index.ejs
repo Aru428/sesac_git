@@ -37,16 +37,88 @@
     <!-- ********* post 요청 ********* -->
     <h1>회원가입 post 요청</h1>
     <form action="/post/ver2" method="post">
-      <input type="text" name="id" placeholder="ID" />
-      <input type="password" name="pw" placeholder="PW" />
-      <input type="text" name="name" placeholder="name" />
+      <input type="text" name="id" placeholder="ID" pattern="^([a-zA-Z0-9가-힣]){4,}$" title="소문자, 대문자, 한글, 숫자로 조합된 4자리 이상을 입력하세요" />
+      <input type="password" name="pw" placeholder="PW" oninput="validCheckPw(this)" />
+      <div id="error-pw"></div>
+      <input type="text" name="name" minlength="4" placeholder="name" required />
+      <input type="number" min="5" max="10" placeholder="숫자">
       <input type="text" name="email" placeholder="email" />
       <button type="submit">제출</button>
+    </form>
+
+
+
+    <!-- 실습. validation 적용하기 -->
+    <h1>회원가입</h1>
+    <form action="/post/ver3" method="post">
+      <fieldset>
+        <legend>회원가입</legend>
+        아이디 <input type="text" name="id" oninput="validId(this)" required />
+        <span style="color: red; opacity: 0.5;" id="error-id"></span>
+        <br />
+        비밀번호 <input type="password" name="pw" oninput="validPw(this)" required />
+        <span style="color: red; opacity: 0.5;" id="error-pw2"></span>
+        <br />
+        전화번호 <input type="text" name="phone-num" oninput="validPhone(this)" maxlength="8" required />
+        <br />
+        이름 <input type="text" name="name" required />
+        <br />
+        성별 <select name="gender" id="gender" required>
+          <option value="men">남자</option>
+          <option value="women">여자</option>
+        </select>
+        <br /><br />
+        <button type="submit">회원가입</button>
+      </fieldset>
+
     </form>
 
     <script>
       console.dir(document.forms["login"])
       console.log(document.forms["login"])
+
+      function validCheckPw(el) {
+        const regexPw = /^([a-z0-9]){8,12}$/
+        const value = el.value
+        const error = document.getElementById("error-pw")
+        // regexPw.test("검사하고 싶은 값") => true or false return
+        if (regexPw.test(value)) {
+          error.innerHTML = ""
+          console.log("정규식 일치")
+        } else {
+          error.innerHTML = "소문자, 숫자로 조합된 8~12자리로 입력하세요"
+          console.log("정규식 불일치")
+        }
+      }
+
+      // 실습. validation 적용하기
+      function validId(target) {
+        const regexId = /^([a-z0-9]){5,}$/
+        const value1 = target.value
+        const error1 = document.getElementById("error-id")
+        if (regexId.test(value1)) {
+          error1.innerText = ""
+        } else {
+          error1.innerText = "소문자, 숫자로 조합된 글자 5자리 이상 입력하세요"
+        }
+      }
+
+      function validPw(target) {
+        const regexPw2 = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/
+        const value2 = target.value
+        const error2 = document.getElementById("error-pw2")
+        if (regexPw2.test(value2)) {
+          error2.innerText = ""
+        } else {
+          error2.innerText = "소문자, 대문자, 숫자, 특수문자 모두 한 번 이상 사용하고 8글자 이상 입력해야 합니다."
+        }
+      }
+
+      function validPhone(target) {
+        target.value = target.value
+          .replace(/[^0-9]/g, '')
+          .replace(/^(\d{4,4})(\d{4})$/, `010-$1-$2`);
+      }
     </script>
   </body>
 </html>

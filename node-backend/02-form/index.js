@@ -51,6 +51,10 @@ app.post("/post/ver2", function (req, res) {
   });
 });
 
+app.post("/post/ver3", function (req, res) {
+  res.send("회원가입 성공!");
+});
+
 // CRUD (Create, Read, Update, Delete)
 // get은 보통 정보를 가져올 때 사용 (Read)
 // post는 무언가를 생성하거나 정보를 보낼 때 주로 사용 (Create)
