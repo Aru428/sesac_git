@@ -44,6 +44,20 @@ app.post("/upload", uploadDetail.single("file"), function (req, res) {
   });
 });
 
+app.post(
+  "/upload/dynamicfile",
+  uploadDetail.single("file"),
+  function (req, res) {
+    res.send({
+      src: req.file.path,
+      id: req.body.id,
+      pw: req.body.pw,
+      name: req.body.name,
+      age: req.body.age,
+    });
+  }
+);
+
 app.listen(PORT, function () {
   console.log(`Sever Open: ${PORT}`);
 });

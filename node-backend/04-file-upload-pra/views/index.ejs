@@ -4,16 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>파일 업로드</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 500px;
+        background-color: beige;
+      }
+    </style>
   </head>
   <body>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="text" name="id" placeholder="아이디" /><br />
-      <input type="password" name="pw" placeholder="비밀번호" /><br />
-      <input type="text" name="name" placeholder="이름" /><br />
-      <input type="text" name="age" placeholder="나이" /><br />
+    <form action="/upload" method="post" enctype="multipart/form-data" name="sign-up">
+      <input type="text" name="id" placeholder="아이디" value="sohee" /><br />
+      <input type="password" name="pw" placeholder="비밀번호" value="1234" /><br />
+      <input type="text" name="name" placeholder="이름" value="소희" /><br />
+      <input type="text" name="age" placeholder="나이" value="26" /><br />
       <input type="file" name="file" />
       <br /><br />
       <button type="submit">회원가입</button>
+      <button type="button" onclick="dynamicFileUpload()">(동적 폼 전송)회원가입</button>
     </form>
+    <div id="dynamic-file-upload" class="container"></div>
+
+
+    <script>
+      function dynamicFileUpload() {
+        const form = document.forms["sign-up"];
+        const data = new FormData();
+        data.append("id", form.id.value);
+        data.append("pw", form.pw.value);
+        data.append("name", form.name.value);
+        data.append("age", form.age.value);
+        data.append("file", form.file.files[0]);
+
+        axios({
+          method: "post",
+          url: "/upload/dynamicfile",
+          data: data,
+          headers: {
+            "Content-type": "multipart/form-data",
+          }
+        }).then((res) => {
+          console.log(data)
+          const result = document.getElementById("dynamic-file-upload")
+          result.innerHTML =
+            `
+            <img src="/${res.data.src}"  width="200"/>
+            <h3>${res.data.id}님 환영합니다!</h3>
+            <br />
+            <p>비밀번호: ${res.data.pw}</p>
+            <p>이름: ${res.data.name}</p>
+            <p>나이: ${res.data.age}</p>
+          `
+        })
+      }
+    </script>
+
   </body>
 </html>
