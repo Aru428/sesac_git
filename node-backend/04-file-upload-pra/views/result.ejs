@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <img src="/<%=src %>" />
+      <h3><%=id %>님 환영합니다!</h3>
+      <br />
+      <p>비밀번호: <%=pw %></p>
+      <p>이름: <%=name %></p>
+      <p>나이: <%=age %></p>
+    </div>
+
+  </body>
+</html>
