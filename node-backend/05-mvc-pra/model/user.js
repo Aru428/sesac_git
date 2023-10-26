@@ -17,6 +17,8 @@ for (let i = 0; i < str.length; i++) {
 }
 //console.log(userList);
 
-exports.userInfos = () => {
-  return userList;
-};
+// exports.userInfos = () => {
+//   return userList;
+// };
+
+exports.userInfos = userList;

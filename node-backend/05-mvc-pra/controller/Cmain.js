@@ -5,7 +5,8 @@ exports.main = (req, res) => {
 };
 
 exports.axiosLogin = (req, res) => {
-  const userData = userInfos();
+  // const userData = userInfos();
+  const userData = userInfos;
   let flag = 0;
   let index = 0;
   let data;
