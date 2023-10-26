@@ -34,3 +34,7 @@ exports.axiosLogin = (req, res) => {
 
   res.send(data);
 };
+
+exports.axiosSignUp = (req, res) => {
+  res.send(req.query);
+};
