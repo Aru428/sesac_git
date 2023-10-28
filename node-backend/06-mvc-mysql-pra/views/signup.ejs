@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <form name="user-register">
+      <fieldset>
+        <legend>회원가입</legend>
+        <input type="text" name="userid" placeholder="아이디" />
+        <br />
+        <input type="text" name="name" placeholder="이름" />
+        <br />
+        <input type="password" name="pw" placeholder="비밀번호" />
+        <br /><br />
+        <button type="button" onclick="addUser()">회원가입</button>
+      </fieldset>
+    </form>
+    <div id="signup-result"></div>
+    <a href="/">로그인으로 돌아가기</a>
+
+
+    <script>
+      function addUser() {
+        const form = document.forms["user-register"];
+        const data = {
+          userid: form.userid.value,
+          pw: form.pw.value,
+          name: form.name.value
+        }
+        axios({
+          method: 'post',
+          url: '/signup',
+          data: data,
+        }).then((res) => {
+          const {
+            msg
+          } = res.data;
+          $("div").html("회원가입 성공!");
+        })
+      }
+    </script>
+  </body>
+</html>
