@@ -12,4 +12,7 @@ router.post("/axios", controller.axiosLogin);
 // 회원가입
 router.post("/signup", controller.postUser);
 
+// 회원탈퇴
+router.delete("/:id", controller.deleteUser);
+
 module.exports = router;

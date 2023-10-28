@@ -49,3 +49,8 @@ exports.postUser = (req, res) => {
     });
   });
 };
+
+exports.deleteUser = (req, res) => {
+  console.log(req.params);
+  res.send("");
+};

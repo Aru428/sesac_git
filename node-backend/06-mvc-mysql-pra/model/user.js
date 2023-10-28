@@ -26,3 +26,14 @@ exports.insertUser = (data, cb) => {
     cb(result.insertId);
   });
 };
+
+exports.deleteUser = (id, cb) => {
+  const sql = `delete from user2 where id = ${id}`;
+
+  conn.query(sql, (err, result) => {
+    if (err) {
+      throw err;
+    }
+    cb();
+  });
+};
