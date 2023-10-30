@@ -59,3 +59,27 @@ exports.delVisitor = (id, cb) => {
     cb(flag);
   });
 };
+
+exports.getVisitorById = (id, cb) => {
+  const sql = `SELECT * FROM visitor WHERE id = ${id}`;
+  conn.query(sql, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log("Visitor.js: ", rows);
+    cb(rows[0]);
+  });
+};
+
+exports.patchVisitor = (data, cb) => {
+  const sql = `UPDATE visitor SET username = '${data.name}', comment = '${data.comment}' WHERE id = ${data.id}`;
+  conn.query(sql, (err, result) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log("Visitor.js: ", result);
+    cb(result);
+  });
+};

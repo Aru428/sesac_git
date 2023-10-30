@@ -12,9 +12,10 @@ router.get("/visitors", controller.visitor);
 router.post("/visitor", controller.postVisitor);
 
 // 방명록 수정
-router.patch("/visitor/:id", function (req, res) {
-  res.send("");
-});
+router.patch("/visitor", controller.patchVisitor);
+
+// 방명록 하나 조회
+router.get("/visitor/:id", controller.getVisitorById);
 
 // 방명록 삭제
 router.delete("/visitor/:id", controller.deleteVisitor);

@@ -26,12 +26,28 @@ exports.postVisitor = (req, res) => {
   });
 };
 
-// PATCH 요청  /visitor/:id => 방명록 수정
-
 // DELETE 요청  /visitor/:id => 방명록 삭제
 exports.deleteVisitor = (req, res) => {
   console.log("req.params", req.params);
   Visitor.delVisitor(req.params.id, (result) => {
     res.send({ result: true });
+  });
+};
+
+// GET /visitor/:id => 방명록 하나 조회
+exports.getVisitorById = (req, res) => {
+  Visitor.getVisitorById(req.params.id, (result) => {
+    console.log("ctrl getVisitorById: ", result);
+    res.send(result);
+  });
+};
+
+// PATCH /visitor/:id => 방명록 수정
+exports.patchVisitor = (req, res) => {
+  console.log(req.body);
+
+  Visitor.patchVisitor(req.body, (result) => {
+    console.log("ctrl getVisitorById: patchVisitor", result);
+    res.send({ resuslt: true });
   });
 };
