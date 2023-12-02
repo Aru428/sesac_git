@@ -1,5 +1,6 @@
 // 이벤트 핸들링 실습 4
 import { useState } from "react";
+import ColorSelect from "./ColorSelect";
 
 function PracEvent4() {
   const [fruit, setFruit] = useState("/apple.jpg");
@@ -27,37 +28,15 @@ function PracEvent4() {
     <>
       <div className="container">
         <form>
-          과일 :
+          <label>과일 : </label>
           <select onClick={onClickFruit}>
             <option value="/apple.jpg">사과</option>
             <option value="/banana.jpg">바나나</option>
             <option value="/peach.jpeg">복숭아</option>
             <option value="/grape.jpg">포도</option>
           </select>
-          배경색 :
-          <select onClick={onClickBackColor}>
-            <option value="black">검정</option>
-            <option value="white">하양</option>
-            <option value="red">빨강</option>
-            <option value="orange">주황</option>
-            <option value="yellow">노랑</option>
-            <option value="green">초록</option>
-            <option value="blue">파랑</option>
-            <option value="purple">보라</option>
-            <option value="pink">분홍</option>
-          </select>
-          글자색 :
-          <select onClick={onClickColor}>
-            <option value="black">검정</option>
-            <option value="white">하양</option>
-            <option value="red">빨강</option>
-            <option value="orange">주황</option>
-            <option value="yellow">노랑</option>
-            <option value="green">초록</option>
-            <option value="blue">파랑</option>
-            <option value="purple">보라</option>
-            <option value="pink">분홍</option>
-          </select>
+          <ColorSelect mode="배경" onClickHandler={onClickBackColor} />
+          <ColorSelect mode="글자색" onClickHandler={onClickColor} />
           <br />
           내용 :{" "}
           <input
