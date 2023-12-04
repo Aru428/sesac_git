@@ -18,10 +18,28 @@ function PracRef() {
     },
   ]);
 
-  const wriInput = useRef();
-  const titInput = useRef();
+  const writerInputElem = useRef();
+  const titleInputElem = useRef();
+
+  const checkInputValue = () => {
+    if (inputWriter.trim().length === 0) {
+      writerInputElem.current.focus();
+      return false;
+    }
+
+    if (inputTitle.trim().length === 0) {
+      titleInputElem.current.focus();
+      return false;
+    }
+
+    return true;
+  };
 
   const addComment = () => {
+    if (!checkInputValue()) {
+      return;
+    }
+
     let newComment = {
       writer: inputWriter,
       title: inputTitle,
@@ -37,19 +55,19 @@ function PracRef() {
       <form>
         <label htmlFor="writer">작성자:</label>
         <input
+          ref={writerInputElem}
           id="writer"
           type="text"
           name="writer"
-          ref={titInput}
           value={inputWriter}
           onChange={(e) => setInputWriter(e.target.value)}
         />
         <label htmlFor="title">제목:</label>
         <input
+          ref={titleInputElem}
           id="title"
           type="text"
           name="title"
-          ref={wriInput}
           value={inputTitle}
           onChange={(e) => setInputTitle(e.target.value)}
         />
