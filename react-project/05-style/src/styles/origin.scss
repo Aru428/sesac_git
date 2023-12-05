@@ -1,0 +1,72 @@
+$color-main: red;
+
+.scss-parents {
+  color: $color-main;
+  width: 1000px - 200px;
+  //   background-color: antiquewhite;
+}
+
+// 믹스인(Mixin) : 미리 CSS 코드 블록정의하여 재사용
+@mixin box-width($size) {
+  width: $size;
+  height: $size;
+}
+
+.box1 {
+  @include box-width(100px);
+  background-color: blue;
+}
+
+.box2 {
+  @include box-width(200px);
+  background-color: green;
+}
+
+// 중첩 : 선택자를 중첩시켜 코드의 중복을 줄이고, 가독성 높임
+.scss-parents {
+  ul {
+    background-color: black;
+    color: white;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// 확장(Extend) : 기존의 선택자 스타일을 다른 선택자에게 상속
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  @extend .btn;
+  background-color: aliceblue;
+}
+
+.origin-sass {
+  display: flex;
+  .box {
+    @include box-width(100px);
+
+    &.red {
+      background-color: red;
+    }
+    &.orange {
+      background-color: orange;
+    }
+    &.yellow {
+      background-color: yellow;
+    }
+    &.green {
+      background-color: green;
+    }
+    &.blue {
+      background-color: blue;
+    }
+    &.purple {
+      background-color: purple;
+    }
+  }
+}
