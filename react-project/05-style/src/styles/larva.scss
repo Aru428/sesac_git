@@ -1,0 +1,64 @@
+.larva {
+  position: relative;
+}
+
+.body {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+@mixin trans-body($top, $left, $color) {
+  top: $top;
+  left: $left;
+  background-color: $color;
+}
+
+.larva .body1 {
+  @extend .body;
+  @include trans-body(100px, 100px, rgb(0, 0, 166));
+
+  .eye {
+    border-radius: 50%;
+    position: absolute;
+
+    &.eye-white {
+      @extend .eye;
+      width: 40px;
+      height: 40px;
+      top: 20px;
+      left: 20px;
+      background-color: white;
+    }
+    &.eye-black {
+      @extend .eye;
+      width: 20px;
+      height: 20px;
+      top: 10px;
+      background-color: black;
+    }
+  }
+}
+.larva .body2 {
+  @extend .body;
+  @include trans-body(150px, 160px, rgb(36, 61, 206));
+}
+.larva .body3 {
+  @extend .body;
+  @include trans-body(190px, 200px, rgb(52, 118, 231));
+}
+.larva .body4 {
+  @extend .body;
+  @include trans-body(240px, 220px, rgb(47, 146, 233));
+}
+.larva .body5 {
+  @extend .body;
+  @include trans-body(280px, 280px, rgb(140, 191, 253));
+  z-index: 10;
+}
+
+.larva .grass {
+  position: absolute;
+  top: 260px;
+  left: 0;
+}

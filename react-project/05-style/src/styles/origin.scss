@@ -1,3 +1,5 @@
+@import "./media.scss";
+
 $color-main: red;
 
 .scss-parents {
@@ -70,3 +72,28 @@ $color-main: red;
     }
   }
 }
+
+// @media screen and (max-width: 768px) {
+//   .origin-sass {
+//     display: block;
+//   }
+// }
+
+// 태블릿일 때는 768px
+// @mixin tablet {
+//   @media screen and (max-width: 768px) {
+//     @content;
+//   }
+// }
+
+// @mixin : css에서 묶어두고 싶은 코드블럭을 정의할 때 사용
+// @include : 정의한 mixin을 사용할 때
+// @content : 정의할 때 @content 키워드 적은 곳 - 사용할 때, 중괄호에 적은 내용
+
+@include tablet {
+  .origin-sass {
+    display: block;
+  }
+}
+
+// 핸드폰일 때는 500px
