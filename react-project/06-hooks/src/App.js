@@ -7,6 +7,7 @@ import UseReducer from "./components/useReducer";
 import CustomHookEx from "./components/CustomHookEx";
 import PracHook from "./components/PracHook";
 import PracUseCallback from "./components/PracUseCallback";
+import PracCustomHook from "./components/PracCustomHook";
 
 function App() {
   const [postId, setPostId] = useState(1);
@@ -27,6 +28,8 @@ function App() {
       <PracHook />
       <hr />
       <PracUseCallback />
+      <hr />
+      <PracCustomHook />
       <hr />
     </div>
   );
