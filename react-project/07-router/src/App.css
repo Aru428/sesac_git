@@ -1,0 +1,31 @@
+:root {
+  --height-header: 80px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  margin-top: var(--height-header);
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  height: var(--height-header);
+  width: 100%;
+  background-color: blanchedalmond;
+  padding: 0 20px;
+}
+
+.Header > nav {
+  display: flex;
+}
+
+.Header > nav > div {
+  margin-right: 50px;
+}
