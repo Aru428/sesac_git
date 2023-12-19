@@ -24,27 +24,29 @@ io.on("connection", (socket) => {
 
   // [실습 3-1번] 입장 시에 받은 userId로 입장
   socket.on("entry", (res) => {
-    userIdArr[socket.id] = res.userId;
+    // userIdArr[socket.id] = res.userId;
 
     // [실습 3-2번] 닉네임 중복 방지
     // 상황(닉네임이 중복되는지)에 따라 정상적으로 notice를 하던지
     // 중복된다는 오류 메세지를 보내주던지
-    // const checkDuplicate = fasle;
+    let checkDuplicate = false;
 
-    // for (let key in userIdArr) {
-    //   if (userIdArr[key] === res.userId) {
-    //     checkDuplicate = true;
-    //     socket.emit("result", { result: "error" });
-    //   }
-    // }
-    // if (!checkDuplicate) {
-    //   userIdArr[socket.id] = res.userId;
-    //   console.log(userIdArr);
-    //   socket.emit("result", { result: "success" });
-    //   io.emit("notice", { msg: `${res.userId}님이 입장하셨습니다.` });
-    // }
+    for (let key in userIdArr) {
+      if (checkDuplicate) continue;
+      if (userIdArr[key] === res.userId) {
+        checkDuplicate = true;
+        socket.emit("result", { result: "error" });
+      }
+    }
 
-    io.emit("notice", { msg: `${res.userId}님이 입장하셨습니다.` });
+    if (!checkDuplicate) {
+      userIdArr[socket.id] = res.userId;
+      console.log(userIdArr);
+      socket.emit("result", { result: "success" });
+      io.emit("notice", { msg: `${res.userId}님이 입장하셨습니다.` });
+    }
+
+    // io.emit("notice", { msg: `${res.userId}님이 입장하셨습니다.` });
   });
 
   // [실습 3-3번] 퇴장시키기

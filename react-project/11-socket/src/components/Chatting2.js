@@ -52,7 +52,14 @@ export default function Chatting1() {
     initSocketConnect();
     socket.emit("entry", { userId: userIdInput });
     // [실습 3-2] 바로 userId에 값을 할당하지 않고
-    setUserId(userIdInput);
+    socket.on("result", (res) => {
+      if (res.result === "success") {
+        setUserId(userIdInput);
+      } else if (res.result === "error") {
+        alert("닉네임이 중복되었습니다.");
+        setUserIdInput("");
+      }
+    });
   };
 
   return (
