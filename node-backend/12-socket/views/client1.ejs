@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소켓</title>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h3>소켓 연습</h3>
+    <button onclick="hello()">hello</button>
+    <button onclick="entry()">entry</button>
+
+    <h3>Hello World!</h3>
+    <button onclick="resHello()">hello</button>
+    <button onclick="resStudy()">study</button>
+    <button onclick="resBye()">bye</button>
+    <div id="result"></div>
+
+    <script>
+      const socket = io();
+      // 소켓을 이용해 데이터 전송하는 함수 : emit
+      // 소켓을 이용해 데이터 수신하는 이벤트 : on
+
+      function hello() {
+        // emit(전송할 이벤트 이름 [, 전송할 데이터])
+        // 전송할 데이터의 형태는 자유롭게 (문자열, 숫자, 객체)
+        socket.emit("hello", {
+          message: "안녕하세요"
+        })
+      }
+
+      // 이벤트가 여러번 등록되지 않도록 주의!
+      // 여러번 발생하는 함수안에 이벤트 등록 X
+      socket.on("bye", (res) => {
+        console.log(res)
+      })
+
+      function entry() {
+        socket.emit("entry")
+      }
+
+      socket.on("notice", (res) => {
+        console.log(res.message)
+      })
+
+      function resHello() {
+        socket.emit("hi", {
+          text: "hello"
+        })
+      }
+
+      function resStudy() {
+        socket.emit("study", {
+          text: "study"
+        })
+      }
+
+      function resBye() {
+        socket.emit("bye", {
+          text: "bye"
+        })
+      }
+      socket.on("send", (res) => {
+        const div = document.getElementById("result")
+        div.innerText = res.msg
+      })
+    </script>
+  </body>
+</html>
